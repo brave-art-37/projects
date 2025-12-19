@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&display=swap" rel="stylesheet">
+    <title>Digital Clock</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 100;
+            text-align: center;
+        }
+        .time{
+            display: flex;
+            justify-content: center;
+            border-style: solid;
+            border-width: 0.1rem;
+            border-color: white;
+            padding: 1rem;
+            margin-left: 10rem;
+            margin-right: 10rem;
+        }
+    </style>
+</head>
+<body>
+    <br>
+    <div style="font-family: 'Rajdhani', sans-serif; font-size: 4rem;">Digital Clock</div>
+    <br><br>
+    <div class="time"></div>
+</body>
+<script>
+    showTime();
+    function correction(input){
+        if(input<10){
+            input = '0' + input;
+        }
+        return input;
+    }
+
+    function showTime(){
+        let currentDate = new Date();
+        let hours = currentDate.getHours();
+        let minutes = currentDate.getMinutes();
+        let seconds = currentDate.getSeconds();
+        let time = correction(hours) + ' : ' + correction(minutes) + ' : ' + correction(seconds);
+        document.getElementsByClassName('time')[0].innerHTML=time;
+    }
+
+    setInterval(showTime, 1000);
+</script>
+</html>
