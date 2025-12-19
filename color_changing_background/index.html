@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Changing Background </title>
+    <style>
+        .flex-container{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .square{
+            height: 5rem;
+            width: 15rem;
+            border-style: solid;
+            border-color: white;
+            border-width: medium;
+        }
+        .red{
+            background-color: red;
+            border-radius: 1.5rem;
+        }
+        .blue{
+            background-color: blue;
+            border-radius: 1.5rem;
+        }
+        .yellow{
+            background-color: yellow;
+            border-radius: 1.5rem;
+        }
+        .green{
+            background-color: greenyellow;
+            border-radius: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    <br><br><br><br>
+    <h1 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, sans-serif; font-weight: 100; text-align: center;">Color Changing Background</h1>
+<h2 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, sans-serif; font-weight: 100; text-align: center;"> Click on Buttons  OR  Press keys d, f, j, k </h2>
+    <br><br>
+    <div class="flex-container">
+        <div class="square red"></div>
+        <div class="square blue"></div>        
+    </div>
+    <br><br>
+    <div class="flex-container">
+        <div class="square yellow"></div>
+        <div class="square green"></div>        
+    </div>
+</body>
+<script>
+    document.addEventListener('keypress', keyPress);
+
+    function keyPress(event){
+        let key = event.key;
+
+        if(key=='d'){
+            red();
+        }
+        else if(key=='f'){
+            blue();
+        }
+        else if(key=='j'){
+            yellow();
+        }
+        else if(key=='k'){
+            green();
+        }
+        else{}
+    }
+
+    document.getElementsByClassName('red')[0].addEventListener('click', red);
+    
+    function red(){
+        document.body.style.backgroundColor='red';
+        document.getElementsByTagName('h1')[0].style.color='white';
+        document.getElementsByTagName('h2')[0].style.color='white';
+    }
+    
+    document.getElementsByClassName('blue')[0].addEventListener('click', blue);
+    
+    function blue(){
+        document.body.style.backgroundColor='blue';
+        document.getElementsByTagName('h1')[0].style.color='white';
+        document.getElementsByTagName('h2')[0].style.color='white';
+    }
+
+    document.getElementsByClassName('yellow')[0].addEventListener('click', yellow);
+    
+    function yellow(){
+        document.body.style.backgroundColor='yellow';
+        document.getElementsByTagName('h1')[0].style.color='black';
+        document.getElementsByTagName('h2')[0].style.color='black';
+    }
+
+    document.getElementsByClassName('green')[0].addEventListener('click', green);
+    
+    function green(){
+        document.body.style.backgroundColor='greenyellow';
+        document.getElementsByTagName('h1')[0].style.color='black';
+        document.getElementsByTagName('h2')[0].style.color='black';
+    }
+</script>
+</html>
