@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&display=swap" rel="stylesheet">
+    <title>Table Tennis</title>
+    <style>
+        body{
+            background-color: black;
+            font-family: 'Rajdhani', sans-serif;
+            color: white;
+            text-align: center;
+        }
+        hr{
+            display: none;
+        }
+        .ball{
+            height: 1rem;
+            width: 1rem;
+            background-color: white;
+            border-radius: 100%;
+            transform: translate(650px, 300px);
+        }
+        .bar{
+            height: 1rem;
+            width: 10rem;
+            background-color: white;
+            transform: translate(580px,500px);
+        }
+        .time{
+            font-size: 3rem;
+            text-align: center;
+        }
+        .heading{
+            font-size: 4rem;
+        }
+        .subheading{
+            font-size: 1.9rem;
+            animation: blinkingText 1s infinite;
+        }
+        .flex-box{
+            display: none;
+            justify-content: space-around;
+        }
+        .directions{
+            font-size: 3rem;
+        }
+        
+        @keyframes blinkingText {
+            0%{
+                opacity: 0;
+            }
+            25%{
+                opacity: 0.7;
+            }
+            50%{
+                opacity: 1;
+            }
+            85%{
+                opacity: 0.7;
+            }
+            100%{
+                opacity: 0;
+            }
+        }                
+        
+    </style>
+</head>
+<body>
+    <div class="flex-box">
+        <div class="directions ">&larr; &nbsp; f</div>
+        <div class="time"></div>
+        <div class="directions">j &nbsp; &rarr;</div>
+    </div>
+    <hr>
+    <div class="ball"></div>
+    <div class="bar"></div>
+    <div class="heading">Table Tennis</div>
+    <div class="subheading">Press 'Spacebar' to Start</div>
+</body>
+<script src="Table_Tennis.js"></script>
+</html>
